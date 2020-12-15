@@ -29,7 +29,7 @@ app.put('/libro/:id/:titulo', (req, res) => {
     res.status(200);
     res.header("Content-Type",'application/json');
     res.send(
-        "OK!"
+        JSON.stringify(libros[req.params.id])
     );
 })
 
