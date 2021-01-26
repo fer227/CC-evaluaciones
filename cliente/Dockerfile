@@ -1,9 +1,15 @@
 FROM node:14-alpine3.10
 
-WORKDIR /home/node/
+RUN mkdir -p /home/node/node_modules && chown -R node:node /home/node
 
-COPY cliente.js ./
+WORKDIR /home/node
+
+COPY package*.json ./
 
 USER node
+
+RUN npm install
+
+COPY --chown=node:node . .
 
 CMD [ "node", "cliente.js" ]

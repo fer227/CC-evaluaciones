@@ -1,11 +1,15 @@
-version: '2'
+version: '3'
 services:
    api:
       container_name: api
       build: microservicios/.
       ports:
-      - "6000:6000"
+         - "6000:6000"
+      network_mode: host   
 
    cliente:
       container_name: cliente
       build: cliente/.
+      network_mode: host
+      depends_on:
+         - api
