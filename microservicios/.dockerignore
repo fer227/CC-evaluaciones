@@ -1,0 +1,7 @@
+node_modules
+.env
+Dockerfile
+index_variables.js
+prueba-dotenv.js
+prueba_etcd.js
+test.js

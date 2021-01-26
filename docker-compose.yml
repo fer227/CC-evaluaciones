@@ -1,0 +1,12 @@
+version: '2'
+services:
+   api:
+      container_name: api
+      restart: always
+      build: microservicios/.
+      ports:
+      - "6000:6000"
+
+   cliente:
+      container_name: cliente
+      build: cliente/.
